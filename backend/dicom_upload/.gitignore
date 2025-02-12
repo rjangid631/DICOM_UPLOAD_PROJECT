@@ -1,0 +1,19 @@
+Thumbs.db
+
+# VIRTUAL ENVIRONMENT
+myvenv/
+venv/
+
+# PYTHON COMPILED FILES
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Django secret key
+*.ENVIRONMENT
+# SQLite database file
+db.sqlite3
+
+# VS CODE SETTINGS
+.vscode/
