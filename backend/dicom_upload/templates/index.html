@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}  <!-- ✅ Load static files -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicom File Upload</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Dicom File Upload</h2>
+
+        <!-- ✅ Ensure method="POST" and enctype="multipart/form-data" -->
+        <form id="upload-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div id="drop-area" class="drop-area">
+                <p>Drag & Drop files here or click to upload</p>
+                <input type="file" id="fileInput" name="dicom_file" multiple hidden> 
+                <!-- ✅ Ensure "file" matches backend's expected key -->
+            </div>
+
+            <button id="uploadBtn" type="button">Upload</button>
+            <button id="cancelBtn" type="button" disabled>Cancel</button>
+
+            <div id="progress-container"></div>
+            <p id="statusText">No files selected</p>
+        </form>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>  <!-- ✅ Ensure JS loads properly -->
+</body>
+</html>
